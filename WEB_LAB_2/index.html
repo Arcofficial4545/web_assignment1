@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARC Enterprises - Premium Course Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400;1,600;1,700&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#080704',
+                        secondary: '#141008',
+                        accent: '#D4A843',
+                        cream: '#F2E4C0'
+                    },
+                    fontFamily: {
+                        heading: ['Cormorant Garamond', 'serif'],
+                        body: ['Jost', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Jost', sans-serif; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Cormorant Garamond', serif; font-style: italic; }
+        .glass { background: rgba(212,168,67,0.1); border: 1px solid rgba(212,168,67,0.4); backdrop-filter: blur(20px); }
+    </style>
+</head>
+<body class="bg-primary text-cream">
+    
+    <!-- Navigation -->
+    <nav class="glass fixed w-full z-50 top-0">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <span class="text-2xl font-heading text-accent">ARC Enterprises</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-cream hover:text-accent transition duration-300">Home</a>
+                    <a href="pages/about/about.html" class="text-cream hover:text-accent transition duration-300">About</a>
+                    <a href="pages/contact/contact.html" class="text-cream hover:text-accent transition duration-300">Contact</a>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="signin.html" class="px-4 py-2 text-cream hover:text-accent transition duration-300">Sign In</a>
+                    <a href="signup.html" class="px-4 py-2 glass rounded-lg text-accent hover:bg-accent hover:text-primary transition duration-300">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 px-4 relative overflow-hidden">
+        <div class="absolute inset-0 bg-secondary opacity-50"></div>
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="text-center">
+                <h1 class="text-5xl md:text-7xl font-heading text-accent mb-6 animate-fade-in">Transform Your Future</h1>
+                <p class="text-xl md:text-2xl text-cream mb-8 max-w-3xl mx-auto">Master cutting-edge skills with industry-leading courses designed for tomorrow's professionals</p>
+                <div class="flex justify-center space-x-4">
+                    <a href="pages/contact/contact.html" class="px-8 py-3 bg-accent text-primary rounded-lg hover:opacity-90 transition duration-300 font-semibold">Get Started</a>
+                    <a href="pages/about/about.html" class="px-8 py-3 glass rounded-lg text-cream hover:text-accent transition duration-300">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-16 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="glass p-6 rounded-lg text-center">
+                    <div class="text-4xl font-heading text-accent mb-2">50K+</div>
+                    <div class="text-cream">Active Students</div>
+                </div>
+                <div class="glass p-6 rounded-lg text-center">
+                    <div class="text-4xl font-heading text-accent mb-2">200+</div>
+                    <div class="text-cream">Expert Courses</div>
+                </div>
+                <div class="glass p-6 rounded-lg text-center">
+                    <div class="text-4xl font-heading text-accent mb-2">95%</div>
+                    <div class="text-cream">Success Rate</div>
+                </div>
+                <div class="glass p-6 rounded-lg text-center">
+                    <div class="text-4xl font-heading text-accent mb-2">24/7</div>
+                    <div class="text-cream">Support</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Courses -->
+    <section class="py-16 px-4 bg-secondary">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl font-heading text-accent text-center mb-12">Featured Courses</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="glass rounded-lg overflow-hidden hover:scale-105 transition duration-300">
+                    <div class="h-48 bg-gradient-to-br from-accent to-secondary"></div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-heading text-accent mb-2">FinTech Mastery</h3>
+                        <p class="text-cream mb-4">Master blockchain, DeFi, and digital banking technologies</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-accent font-semibold">$299</span>
+                            <button class="px-4 py-2 bg-accent text-primary rounded hover:opacity-90 transition">Enroll Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass rounded-lg overflow-hidden hover:scale-105 transition duration-300">
+                    <div class="h-48 bg-gradient-to-br from-accent to-secondary"></div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-heading text-accent mb-2">AI & Machine Learning</h3>
+                        <p class="text-cream mb-4">Build intelligent systems with cutting-edge AI frameworks</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-accent font-semibold">$349</span>
+                            <button class="px-4 py-2 bg-accent text-primary rounded hover:opacity-90 transition">Enroll Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass rounded-lg overflow-hidden hover:scale-105 transition duration-300">
+                    <div class="h-48 bg-gradient-to-br from-accent to-secondary"></div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-heading text-accent mb-2">Cloud Architecture</h3>
+                        <p class="text-cream mb-4">Design scalable cloud solutions for enterprise systems</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-accent font-semibold">$279</span>
+                            <button class="px-4 py-2 bg-accent text-primary rounded hover:opacity-90 transition">Enroll Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Grid -->
+    <section class="py-16 px-4">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl font-heading text-accent text-center mb-12">Why Choose ARC</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="glass p-6 rounded-lg">
+                    <div class="text-accent text-3xl mb-4">01</div>
+                    <h3 class="text-xl font-heading text-accent mb-2">Industry Experts</h3>
+                    <p class="text-cream">Learn from professionals with real-world experience</p>
+                </div>
+                <div class="glass p-6 rounded-lg">
+                    <div class="text-accent text-3xl mb-4">02</div>
+                    <h3 class="text-xl font-heading text-accent mb-2">Lifetime Access</h3>
+                    <p class="text-cream">Access course materials anytime, anywhere, forever</p>
+                </div>
+                <div class="glass p-6 rounded-lg">
+                    <div class="text-accent text-3xl mb-4">03</div>
+                    <h3 class="text-xl font-heading text-accent mb-2">Certification</h3>
+                    <p class="text-cream">Earn recognized certificates upon completion</p>
+                </div>
+                <div class="glass p-6 rounded-lg">
+                    <div class="text-accent text-3xl mb-4">04</div>
+                    <h3 class="text-xl font-heading text-accent mb-2">Hands-on Projects</h3>
+                    <p class="text-cream">Build real-world projects for your portfolio</p>
+                </div>
+                <div class="glass p-6 rounded-lg">
+                    <div class="text-accent text-3xl mb-4">05</div>
+                    <h3 class="text-xl font-heading text-accent mb-2">Community Support</h3>
+                    <p class="text-cream">Join thousands of learners in our community</p>
+                </div>
+                <div class="glass p-6 rounded-lg">
+                    <div class="text-accent text-3xl mb-4">06</div>
+                    <h3 class="text-xl font-heading text-accent mb-2">Career Services</h3>
+                    <p class="text-cream">Get job placement assistance and career guidance</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-16 px-4 bg-secondary">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl font-heading text-accent text-center mb-12">Student Success Stories</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="glass p-8 rounded-lg">
+                    <p class="text-cream mb-4">"ARC Enterprises transformed my career. The FinTech course gave me the skills to land my dream job at a leading bank."</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-accent rounded-full mr-4"></div>
+                        <div>
+                            <div class="text-accent font-semibold">Sarah Johnson</div>
+                            <div class="text-cream text-sm">FinTech Analyst</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass p-8 rounded-lg">
+                    <p class="text-cream mb-4">"The AI course was comprehensive and practical. I built three projects that impressed my employers during interviews."</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-accent rounded-full mr-4"></div>
+                        <div>
+                            <div class="text-accent font-semibold">Michael Chen</div>
+                            <div class="text-cream text-sm">ML Engineer</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="py-16 px-4">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl font-heading text-accent text-center mb-12">Flexible Pricing Plans</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="glass p-8 rounded-lg">
+                    <h3 class="text-2xl font-heading text-accent mb-4">Starter</h3>
+                    <div class="text-4xl font-heading text-accent mb-6">$99<span class="text-lg text-cream">/month</span></div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="text-cream">Access to 5 courses</li>
+                        <li class="text-cream">Basic support</li>
+                        <li class="text-cream">Certificate of completion</li>
+                    </ul>
+                    <button class="w-full py-3 glass rounded-lg text-accent hover:bg-accent hover:text-primary transition">Choose Plan</button>
+                </div>
+                <div class="glass p-8 rounded-lg border-2 border-accent">
+                    <h3 class="text-2xl font-heading text-accent mb-4">Professional</h3>
+                    <div class="text-4xl font-heading text-accent mb-6">$199<span class="text-lg text-cream">/month</span></div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="text-cream">Unlimited course access</li>
+                        <li class="text-cream">Priority support</li>
+                        <li class="text-cream">Career services</li>
+                    </ul>
+                    <button class="w-full py-3 bg-accent text-primary rounded-lg hover:opacity-90 transition">Choose Plan</button>
+                </div>
+                <div class="glass p-8 rounded-lg">
+                    <h3 class="text-2xl font-heading text-accent mb-4">Enterprise</h3>
+                    <div class="text-4xl font-heading text-accent mb-6">$499<span class="text-lg text-cream">/month</span></div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="text-cream">Team access (10 users)</li>
+                        <li class="text-cream">Dedicated support</li>
+                        <li class="text-cream">Custom training</li>
+                    </ul>
+                    <button class="w-full py-3 glass rounded-lg text-accent hover:bg-accent hover:text-primary transition">Choose Plan</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 px-4 bg-secondary">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-4xl font-heading text-accent mb-6">Ready to Start Your Journey?</h2>
+            <p class="text-xl text-cream mb-8">Join thousands of professionals advancing their careers with ARC Enterprises</p>
+            <a href="signup.html" class="inline-block px-8 py-3 bg-accent text-primary rounded-lg hover:opacity-90 transition duration-300 font-semibold">Start Learning Today</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="glass py-12 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="text-2xl font-heading text-accent mb-4">ARC Enterprises</h3>
+                    <p class="text-cream">Empowering professionals with world-class education</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-heading text-accent mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-cream hover:text-accent transition">Home</a></li>
+                        <li><a href="pages/about/about.html" class="text-cream hover:text-accent transition">About</a></li>
+                        <li><a href="pages/contact/contact.html" class="text-cream hover:text-accent transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-heading text-accent mb-4">Courses</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-cream hover:text-accent transition">FinTech</a></li>
+                        <li><a href="#" class="text-cream hover:text-accent transition">AI & ML</a></li>
+                        <li><a href="#" class="text-cream hover:text-accent transition">Cloud</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-heading text-accent mb-4">Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-cream hover:text-accent transition">Privacy Policy</a></li>
+                        <li><a href="#" class="text-cream hover:text-accent transition">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-accent pt-8 text-center text-cream">
+                <p>&copy; 2026 ARC Enterprises. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

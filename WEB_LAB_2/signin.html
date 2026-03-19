@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In - ARC Enterprises</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400;1,600;1,700&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#080704',
+                        secondary: '#141008',
+                        accent: '#D4A843',
+                        cream: '#F2E4C0'
+                    },
+                    fontFamily: {
+                        heading: ['Cormorant Garamond', 'serif'],
+                        body: ['Jost', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Jost', sans-serif; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Cormorant Garamond', serif; font-style: italic; }
+        .glass { background: rgba(212,168,67,0.1); border: 1px solid rgba(212,168,67,0.4); backdrop-filter: blur(20px); }
+
+        .error-msg {
+            color: #f87171;
+            font-size: 0.75rem;
+            margin-top: 4px;
+            display: none;
+        }
+        .field-error { border-color: #f87171 !important; }
+
+        #error-banner {
+            display: none;
+            background: rgba(248,113,113,0.15);
+            border: 1px solid #f87171;
+            color: #f87171;
+            padding: 12px 16px;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 16px;
+        }
+    </style>
+</head>
+<body class="bg-primary text-cream">
+
+    <!-- Navigation -->
+    <nav class="glass fixed w-full z-50 top-0">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <span class="text-2xl font-heading text-accent">ARC Enterprises</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-cream hover:text-accent transition duration-300">Home</a>
+                    <a href="pages/about/about.html" class="text-cream hover:text-accent transition duration-300">About</a>
+                    <a href="pages/contact/contact.html" class="text-cream hover:text-accent transition duration-300">Contact</a>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="signin.html" class="text-cream hover:text-accent transition duration-300">Sign In</a>
+                    <a href="signup.html" class="px-4 py-2 glass rounded-lg text-accent hover:bg-accent hover:text-primary transition duration-300">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="min-h-screen flex items-center justify-center px-4 py-24">
+        <div class="max-w-6xl w-full grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+
+            <!-- Left Side - Info -->
+            <div class="hidden lg:block">
+                <h1 class="text-5xl font-heading text-accent mb-6">Welcome Back</h1>
+                <p class="text-xl text-cream mb-8">Sign in to continue your learning journey with ARC Enterprises</p>
+                <div class="space-y-6">
+                    <div class="flex items-start">
+                        <div class="w-12 h-12 bg-accent rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-heading text-accent mb-2">Pick Up Where You Left Off</h3>
+                            <p class="text-cream">Resume your courses right where you stopped</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="w-12 h-12 bg-accent rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-heading text-accent mb-2">Track Your Progress</h3>
+                            <p class="text-cream">View your achievements and learning milestones</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="w-12 h-12 bg-accent rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-heading text-accent mb-2">Access New Content</h3>
+                            <p class="text-cream">Fresh courses and materials added every week</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side - Form -->
+            <div class="glass p-8 rounded-lg">
+                <h2 class="text-3xl font-heading text-accent mb-2 text-center">Sign In</h2>
+                <p class="text-cream text-center mb-8">Enter your credentials to access your account</p>
+
+                <!-- Error Banner -->
+                <div id="error-banner">⚠️ Please fix the errors below before signing in.</div>
+
+                <form id="signin-form" class="space-y-6" novalidate>
+
+                    <div>
+                        <label for="email" class="block mb-2 text-sm font-medium text-cream">Email Address</label>
+                        <input type="email" id="email" name="email"
+                            class="bg-secondary border border-accent text-cream text-sm rounded-lg focus:ring-accent focus:border-accent block w-full p-3"
+                            placeholder="john@example.com">
+                        <span class="error-msg" id="email-error">Please enter a valid email address.</span>
+                    </div>
+
+                    <div>
+                        <label for="password" class="block mb-2 text-sm font-medium text-cream">Password</label>
+                        <div class="relative">
+                            <input type="password" id="password" name="password"
+                                class="bg-secondary border border-accent text-cream text-sm rounded-lg focus:ring-accent focus:border-accent block w-full p-3 pr-10"
+                                placeholder="••••••••">
+                            <!-- Show/Hide toggle -->
+                            <button type="button" id="toggle-password" class="absolute inset-y-0 right-3 flex items-center text-cream hover:text-accent transition">
+                                <svg id="eye-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <span class="error-msg" id="password-error">Please enter your password.</span>
+                    </div>
+
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center">
+                            <input id="remember" type="checkbox" class="w-4 h-4 border border-accent rounded bg-secondary focus:ring-3 focus:ring-accent">
+                            <label for="remember" class="ml-2 text-sm text-cream">Remember me</label>
+                        </div>
+                        <a href="#" class="text-sm text-accent hover:underline">Forgot password?</a>
+                    </div>
+
+                    <button type="submit" class="w-full bg-accent text-primary font-semibold rounded-lg text-sm px-5 py-3 text-center hover:opacity-90 transition duration-300">
+                        Sign In
+                    </button>
+
+                    <div class="text-center">
+                        <p class="text-cream">Don't have an account? <a href="signup.html" class="text-accent hover:underline font-semibold">Sign up</a></p>
+                    </div>
+                </form>
+
+                <!-- Social Sign In -->
+                <div class="mt-8">
+                    <div class="relative">
+                        <div class="absolute inset-0 flex items-center">
+                            <div class="w-full border-t border-accent"></div>
+                        </div>
+                        <div class="relative flex justify-center text-sm">
+                            <span class="px-2 bg-primary text-cream">Or continue with</span>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 grid grid-cols-2 gap-4">
+                        <button class="glass px-4 py-3 rounded-lg text-cream hover:bg-accent hover:text-primary transition duration-300 flex items-center justify-center">
+                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12.545,10.239v3.821h5.445c-0.712,2.315-2.647,3.972-5.445,3.972c-3.332,0-6.033-2.701-6.033-6.032s2.701-6.032,6.033-6.032c1.498,0,2.866,0.549,3.921,1.453l2.814-2.814C17.503,2.988,15.139,2,12.545,2C7.021,2,2.543,6.477,2.543,12s4.478,10,10.002,10c8.396,0,10.249-7.85,9.426-11.748L12.545,10.239z"/>
+                            </svg>
+                            Google
+                        </button>
+                        <button class="glass px-4 py-3 rounded-lg text-cream hover:bg-accent hover:text-primary transition duration-300 flex items-center justify-center">
+                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/>
+                            </svg>
+                            Facebook
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="glass py-12 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="text-2xl font-heading text-accent mb-4">ARC Enterprises</h3>
+                    <p class="text-cream">Empowering professionals with world-class education</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-heading text-accent mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-cream hover:text-accent transition">Home</a></li>
+                        <li><a href="pages/about/about.html" class="text-cream hover:text-accent transition">About</a></li>
+                        <li><a href="pages/contact/contact.html" class="text-cream hover:text-accent transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-heading text-accent mb-4">Courses</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-cream hover:text-accent transition">FinTech</a></li>
+                        <li><a href="#" class="text-cream hover:text-accent transition">AI & ML</a></li>
+                        <li><a href="#" class="text-cream hover:text-accent transition">Cloud</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-heading text-accent mb-4">Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-cream hover:text-accent transition">Privacy Policy</a></li>
+                        <li><a href="#" class="text-cream hover:text-accent transition">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-accent pt-8 text-center text-cream">
+                <p>&copy; 2026 ARC Enterprises. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Simple Form Validation -->
+    <script>
+        const form = document.getElementById('signin-form');
+
+        function showError(fieldId, errorId) {
+            document.getElementById(fieldId).classList.add('field-error');
+            document.getElementById(errorId).style.display = 'block';
+        }
+
+        function clearError(fieldId, errorId) {
+            document.getElementById(fieldId).classList.remove('field-error');
+            document.getElementById(errorId).style.display = 'none';
+        }
+
+        function isValidEmail(email) {
+            return email.includes('@') && email.includes('.');
+        }
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            let isValid = true;
+
+            // Email
+            const email = document.getElementById('email').value.trim();
+            if (email === '' || !isValidEmail(email)) {
+                showError('email', 'email-error');
+                isValid = false;
+            } else {
+                clearError('email', 'email-error');
+            }
+
+            // Password
+            const password = document.getElementById('password').value;
+            if (password === '') {
+                showError('password', 'password-error');
+                isValid = false;
+            } else {
+                clearError('password', 'password-error');
+            }
+
+            if (!isValid) {
+                document.getElementById('error-banner').style.display = 'block';
+            } else {
+                document.getElementById('error-banner').style.display = 'none';
+                // Add your sign-in logic here (e.g. redirect or API call)
+                alert('Signed in successfully!');
+            }
+        });
+
+        // Clear errors on input
+        ['email', 'password'].forEach(function(id) {
+            document.getElementById(id).addEventListener('input', function() {
+                clearError(id, id + '-error');
+                document.getElementById('error-banner').style.display = 'none';
+            });
+        });
+
+        // Show/hide password toggle
+        document.getElementById('toggle-password').addEventListener('click', function () {
+            const input = document.getElementById('password');
+            input.type = input.type === 'password' ? 'text' : 'password';
+        });
+    </script>
+
+</body>
+</html>
