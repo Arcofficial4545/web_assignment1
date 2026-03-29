@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - ARC Enterprises</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="../../assets/images/favicon.ico">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400;1,600;1,700&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#080704',
+                        secondary: '#141008',
+                        accent: '#D4A843',
+                        cream: '#F2E4C0'
+                    },
+                    fontFamily: {
+                        heading: ['Cormorant Garamond', 'serif'],
+                        body: ['Jost', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Jost', sans-serif; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Cormorant Garamond', serif; font-style: italic; }
+        .glass { background: rgba(212,168,67,0.1); border: 1px solid rgba(212,168,67,0.4); backdrop-filter: blur(20px); }
+    </style>
+    <script>
+        const THEME_KEY = 'app-theme'
+        const DARK = 'dark'
+        const LIGHT = 'light'
+
+        const applyTheme = (theme) => {
+            document.documentElement.setAttribute('data-theme', theme)
+            localStorage.setItem(THEME_KEY, theme)
+        }
+
+        const syncToggleUI = () => {
+            const current = localStorage.getItem(THEME_KEY) || DARK
+            const toggle = document.getElementById('theme-toggle')
+            const label = document.getElementById('theme-label')
+            if (!toggle) return
+            if (current === LIGHT) {
+                toggle.setAttribute('aria-checked', 'true')
+                if (label) label.textContent = 'Dark Mode'
+            } else {
+                toggle.setAttribute('aria-checked', 'false')
+                if (label) label.textContent = 'Light Mode'
+            }
+        }
+
+        const toggleTheme = () => {
+            const current = localStorage.getItem(THEME_KEY) || DARK
+            applyTheme(current === DARK ? LIGHT : DARK)
+            syncToggleUI()
+        }
+
+        const initTheme = () => {
+            const saved = localStorage.getItem(THEME_KEY) || DARK
+            applyTheme(saved)
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', syncToggleUI)
+            } else {
+                syncToggleUI()
+            }
+        }
+
+        initTheme()
+        window.handleThemeToggle = toggleTheme
+    </script>
+</head>
+<body class="bg-primary text-cream">
+    
+    <!-- Navigation -->
+    <nav class="glass fixed w-full z-50 top-0">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <span class="text-2xl font-heading text-accent">ARC Enterprises</span>
+                </div>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="../../index.html" class="text-cream hover:text-accent transition duration-300">Home</a>
+                    <a href="index.html" class="text-cream hover:text-accent transition duration-300">About</a>
+                    <a href="../contact/index.html" class="text-cream hover:text-accent transition duration-300">Contact</a>
+                    <div class="flex items-center gap-2">
+                        <span id="theme-label" class="text-sm font-medium select-none"></span>
+                        <button
+                            id="theme-toggle"
+                            role="switch"
+                            aria-checked="false"
+                            onclick="handleThemeToggle()"
+                            class="relative inline-flex items-center w-14 h-7 rounded-full transition-colors duration-300 focus:outline-none border border-solid"
+                        >
+                            <span
+                                id="toggle-knob"
+                                class="inline-block w-5 h-5 rounded-full shadow-md transform transition-transform duration-300"
+                            ></span>
+                        </button>
+                    </div>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="../signin/index.html" class="text-cream hover:text-accent transition duration-300">Sign In</a>
+                    <a href="../signup/signup.html" class="px-4 py-2 glass rounded-lg text-accent hover:bg-accent hover:text-primary transition duration-300">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-16 px-4 bg-secondary">
+        <div class="max-w-7xl mx-auto text-center">
+            <h1 class="text-5xl md:text-6xl font-heading text-accent mb-6">About ARC Enterprises</h1>
+            <p class="text-xl text-cream max-w-3xl mx-auto">Pioneering the future of professional education through innovation and excellence</p>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="py-16 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-4xl font-heading text-accent mb-6">Our Mission</h2>
+                    <p class="text-cream text-lg mb-4">At ARC Enterprises, we believe education is the cornerstone of progress. Our mission is to democratize access to world-class learning experiences that empower professionals to thrive in the digital economy.</p>
+                    <p class="text-cream text-lg">We combine cutting-edge technology with expert instruction to deliver transformative educational experiences that prepare learners for the challenges of tomorrow.</p>
+                </div>
+                <div class="glass p-8 rounded-lg">
+                    <div class="space-y-6">
+                        <div>
+                            <h3 class="text-2xl font-heading text-accent mb-2">Innovation</h3>
+                            <p class="text-cream">Constantly evolving our curriculum to match industry demands</p>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-heading text-accent mb-2">Excellence</h3>
+                            <p class="text-cream">Maintaining the highest standards in content and delivery</p>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-heading text-accent mb-2">Accessibility</h3>
+                            <p class="text-cream">Making premium education available to everyone, everywhere</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="py-16 px-4 bg-secondary">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl font-heading text-accent text-center mb-12">Our Journey</h2>
+            <div class="space-y-8">
+                <div class="flex items-start">
+                    <div class="glass p-4 rounded-lg mr-6">
+                        <span class="text-2xl font-heading text-accent">2020</span>
+                    </div>
+                    <div class="flex-1 glass p-6 rounded-lg">
+                        <h3 class="text-xl font-heading text-accent mb-2">Foundation</h3>
+                        <p class="text-cream">ARC Enterprises was founded with a vision to revolutionize online education</p>
+                    </div>
+                </div>
+                <div class="flex items-start">
+                    <div class="glass p-4 rounded-lg mr-6">
+                        <span class="text-2xl font-heading text-accent">2022</span>
+                    </div>
+                    <div class="flex-1 glass p-6 rounded-lg">
+                        <h3 class="text-xl font-heading text-accent mb-2">Expansion</h3>
+                        <p class="text-cream">Reached 10,000 students across 50 countries with 100+ courses</p>
+                    </div>
+                </div>
+                <div class="flex items-start">
+                    <div class="glass p-4 rounded-lg mr-6">
+                        <span class="text-2xl font-heading text-accent">2024</span>
+                    </div>
+                    <div class="flex-1 glass p-6 rounded-lg">
+                        <h3 class="text-xl font-heading text-accent mb-2">Recognition</h3>
+                        <p class="text-cream">Awarded Best EdTech Platform by Global Education Forum</p>
+                    </div>
+                </div>
+                <div class="flex items-start">
+                    <div class="glass p-4 rounded-lg mr-6">
+                        <span class="text-2xl font-heading text-accent">2026</span>
+                    </div>
+                    <div class="flex-1 glass p-6 rounded-lg">
+                        <h3 class="text-xl font-heading text-accent mb-2">Innovation</h3>
+                        <p class="text-cream">Launched AI-powered personalized learning paths and career services</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="py-16 px-4">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl font-heading text-accent text-center mb-12">Meet Our Team</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="glass p-6 rounded-lg text-center">
+                    <div class="w-32 h-32 bg-accent rounded-full mx-auto mb-4"></div>
+                    <h3 class="text-2xl font-heading text-accent mb-2">Abdul Rehman Ch</h3>
+                    <p class="text-cream mb-2">Chief Technology Officer</p>
+                    <p class="text-cream text-sm">Leading our technical innovation and platform development</p>
+                </div>
+                <div class="glass p-6 rounded-lg text-center">
+                    <div class="w-32 h-32 bg-accent rounded-full mx-auto mb-4"></div>
+                    <h3 class="text-2xl font-heading text-accent mb-2">Salman Irfan</h3>
+                    <p class="text-cream mb-2">Head of Product</p>
+                    <p class="text-cream text-sm">Designing exceptional learning experiences for our students</p>
+                </div>
+                <div class="glass p-6 rounded-lg text-center">
+                    <div class="w-32 h-32 bg-accent rounded-full mx-auto mb-4"></div>
+                    <h3 class="text-2xl font-heading text-accent mb-2">Ahmed Raza Hassan</h3>
+                    <p class="text-cream mb-2">Director of Education</p>
+                    <p class="text-cream text-sm">Curating world-class curriculum and instructor partnerships</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="py-16 px-4 bg-secondary">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl font-heading text-accent text-center mb-12">Impact by Numbers</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="text-5xl font-heading text-accent mb-2">50K+</div>
+                    <div class="text-cream">Students Enrolled</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-5xl font-heading text-accent mb-2">200+</div>
+                    <div class="text-cream">Expert Courses</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-5xl font-heading text-accent mb-2">95%</div>
+                    <div class="text-cream">Completion Rate</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-5xl font-heading text-accent mb-2">150+</div>
+                    <div class="text-cream">Countries Reached</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-16 px-4">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl font-heading text-accent text-center mb-12">What Our Students Say</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="glass p-6 rounded-lg">
+                    <p class="text-cream mb-4">"The quality of instruction at ARC is unmatched. I gained practical skills that immediately impacted my career."</p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-accent rounded-full mr-3"></div>
+                        <div>
+                            <div class="text-accent font-semibold">Emily Rodriguez</div>
+                            <div class="text-cream text-sm">Data Scientist</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass p-6 rounded-lg">
+                    <p class="text-cream mb-4">"ARC's courses are comprehensive, engaging, and perfectly paced. The support team is incredibly responsive."</p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-accent rounded-full mr-3"></div>
+                        <div>
+                            <div class="text-accent font-semibold">David Kim</div>
+                            <div class="text-cream text-sm">Software Engineer</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass p-6 rounded-lg">
+                    <p class="text-cream mb-4">"I've tried many platforms, but ARC stands out for its practical approach and industry-relevant content."</p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-accent rounded-full mr-3"></div>
+                        <div>
+                            <div class="text-accent font-semibold">Priya Sharma</div>
+                            <div class="text-cream text-sm">Product Manager</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="glass py-12 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="text-2xl font-heading text-accent mb-4">ARC Enterprises</h3>
+                    <p class="text-cream">Empowering professionals with world-class education</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-heading text-accent mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="../../index.html" class="text-cream hover:text-accent transition">Home</a></li>
+                        <li><a href="index.html" class="text-cream hover:text-accent transition">About</a></li>
+                        <li><a href="../contact/index.html" class="text-cream hover:text-accent transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-heading text-accent mb-4">Courses</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-cream hover:text-accent transition">FinTech</a></li>
+                        <li><a href="#" class="text-cream hover:text-accent transition">AI & ML</a></li>
+                        <li><a href="#" class="text-cream hover:text-accent transition">Cloud</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-heading text-accent mb-4">Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-cream hover:text-accent transition">Privacy Policy</a></li>
+                        <li><a href="#" class="text-cream hover:text-accent transition">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-accent pt-8 text-center text-cream">
+                <p>&copy; 2026 ARC Enterprises. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
